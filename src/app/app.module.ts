@@ -1,35 +1,42 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
+import {BrowserModule} from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
 
-import { MaterializeModule } from 'angular2-materialize';
-
-import { AppComponent } from './app.component';
-import { NavBarComponent } from './nav-bar/nav-bar.component';
-import { HomeComponent } from './home/home.component';
-import { NotFoundComponent } from './not-found/not-found.component';
-import { routing } from './app.routing';
-import { usersRouting } from "./users/users.routing";
-import { UsersModule } from "./users/users.module";
+import {AppComponent} from './app.component';
+import {ModalModule, TooltipModule} from 'ngx-bootstrap';
+import {AppRoutingModule} from './app.routing';
+import {AddMedicineComponent} from './modals/addmedicine/addmedicine.component';
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {EditMedicineComponent} from './modals/editmedicine/editmedicine.component';
+import {ServicesModule} from "./services/services.module";
+import { DeleteMedicinecomponent } from './modals/deletemedicine/deletemedicinecomponent';
+import {HttpModule} from '@angular/http';
+import {MedicinesComponent} from './components/medicines/medicines.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavBarComponent,
-    HomeComponent,
-    NotFoundComponent
+    MedicinesComponent,
+    AddMedicineComponent,
+    EditMedicineComponent,
+    DeleteMedicinecomponent,
   ],
   imports: [
     BrowserModule,
+    TooltipModule.forRoot(),
+    ModalModule.forRoot(),
+    AppRoutingModule,
     FormsModule,
-    HttpModule,
-    MaterializeModule,
-    UsersModule,
-    usersRouting,
-    routing
+    ReactiveFormsModule,
+    ServicesModule,
+    HttpModule
+  ],
+  entryComponents: [
+    AddMedicineComponent,
+    EditMedicineComponent,
+    DeleteMedicinecomponent,
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}

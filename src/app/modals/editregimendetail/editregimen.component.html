@@ -1,0 +1,34 @@
+<div class="modal-dialog">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h4 class="modal-title pull-left">Edit Medicine</h4>
+      <button type="button" class="close pull-right" aria-label="Close" (click)="close()">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <form class="form">
+        <div class="form-group">
+          <label class="form-control-label">First Name</label>
+          <input type="text" class="form-control" placeholder="Name" name="username" [(ngModel)]="Medicine.firstName">
+        </div>
+        <div class="form-group">
+          <label class="form-control-label">Middle Name</label>
+          <input type="text" class="form-control" placeholder="Middlename" name="middlename" [(ngModel)]="Medicine.middleName">
+        </div>
+        <div class="form-group">
+          <label class="form-control-label">Last Name</label>
+          <input type="text" class="form-control" placeholder="Lastname" name="lastname" [(ngModel)]="Medicine.lastName">
+        </div>
+        <div class="form-group">
+          <label class="form-control-label">Occupation</label>
+          <input type="text" class="form-control" placeholder="Occupation" name="occupation" [(ngModel)]="Medicine.occupation">
+        </div>
+      </form>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-default" (click)="close()">Cancel</button>
+      <button class="btn btn-primary" (click)="okay()">Ok</button>
+    </div>
+  </div>
+</div>
